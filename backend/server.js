@@ -5,7 +5,7 @@ const dotenv = require("dotenv")
 const cors = require('cors');
 const connectDB = require("./config/db");
 const colors = require("colors");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 connectDB();
@@ -13,11 +13,12 @@ connectDB();
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 app.get("/", (req,res)=>{
     res.send("Api is running")
 })
 
-app.use("api/user", userRoutes)
+app.use("/api/user", userRoutes)
 // app.get("/api/chat", (req, res)=>{
 //     res.send(chats)
 // })
