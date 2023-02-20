@@ -22,6 +22,8 @@ app.get("/", (req,res)=>{
 app.use("/api/user", userRoutes)
 app.use(notFound)
 app.use(errorHandler)
+
+
 // app.get("/api/chat", (req, res)=>{
 //     res.send(chats)
 // })

@@ -18,7 +18,7 @@ const HomePage = () => {
         borderWidth="1px"
       >
         <Text fontSize="3xl" fontFamily="Work sans" color="blue.300">
-          Talk-A-Bubbles
+          Talk-A-Bubble
         </Text>
       </Box>
       <Box bg={"white"} w="100%" borderRadius="lg" borderWidth="1px" p={4} color="black">
