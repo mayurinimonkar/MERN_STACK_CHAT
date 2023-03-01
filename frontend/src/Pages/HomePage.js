@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Container, Text } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import Login from "../components/Authentication/Login";
 import SignUp from "../components/Authentication/SignUp";
+import { useHistory } from "react-router-dom";
 
 const HomePage = () => {
+
+  const history = useHistory()
+
+    useEffect(() => {
+      const user = JSON.parse(localStorage.getItem("userInfo"));
+      
+      if(!user){
+        history.push("/chats")
+      }
+    }, [history])
   return (
     <Container maxW="md" centerContent>
       <Box
@@ -18,7 +29,7 @@ const HomePage = () => {
         borderWidth="1px"
       >
         <Text fontSize="3xl" fontFamily="Work sans" color="blue.300">
-          Talk-A-Bubble
+          Talk-A-Bubbles
         </Text>
       </Box>
       <Box bg={"white"} w="100%" borderRadius="lg" borderWidth="1px" p={4} color="black">
